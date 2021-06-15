@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/css/normalize.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/css/foundation.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/style.css">
+
+<script src="/files/theme/BarGraph/bower_components/d3/d3.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/topojson/topojson.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/modernizr/modernizr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+
+
+</head>
+
+<body>
+<a href="http://koenigsbergfood.weebly.com/bargraph.html"><button>Return to Bar Graph Index</button></a>
+<section>
+  <div class="row">
+    <div class="small-12 columns">
+      <h2>Königsberg Foodstuffs Database | Fish, 1640&ndash;1688</h2>
+    </div>
+  </div>
+
+</section>
+
+  <div class="row">
+    <div class="small-8 columns">
+	<span style="font-size:12px; font-family: Arial, Helvetica, sans-serif;">Select from the dropdown menu to change from normalized quantities (how much that food accounted for the annual consumption in that category) to absolute numbers of consumption.</span>
+    </div>
+    <div class="small-4 columns">
+	
+      <select name="field-selector" id="field-selector"></select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns column-width-fix">
+      <div id="legend"></div>
+	  <p id="grayBar"> <img src="/files/theme/BarGraph/img/bar.png"></img>Gray/White bars denote years when no records were available</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns" id="mainchart"></div>
+  </div>
+
+<div class="row">
+    <div class="small-12 columns">
+  <h5>Percentage of Year Friedrich Wilhelm at Königsberg Residence</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns" id="timechart"></div>
+  </div>
+
+    <div class="row"  style="font-size:12px;">
+    <span> *Timeline data derived from Leopold von Ledebur, Schauplatz der Thaten oder Aufenthalts-Nachweis des Kurfürsten Friedrich Wilhelm des Großen. Berlin: W. Hayn, 1840</span>
+  </div>
+
+  <script src="/files/theme/BarGraph/lib/fish.js"></script>
+
+<div style='display:none'>{title}</div>
+<div style='display:none'>{menu}</div>
+<div style='display:none'>{content}</div>
+<div style='padding: 20px; width:100%; text-align:center;'>{footer}</div>
+</body>
+</html>

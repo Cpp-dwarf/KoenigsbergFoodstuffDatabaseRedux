@@ -1,0 +1,30 @@
+{
+  "name": "Foodstuffs Vizualizations",
+  "version": "0.1.0",
+  "authors": [
+    "Jason Heppler <jason.heppler@gmail.com>"
+  ],
+  "description": "Dissertation research project",
+  "main": "index.html",
+  "keywords": [
+    "research",
+    "dissertation"
+  ],
+  "license": "MIT",
+  "homepage": "http://jasonheppler.org",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "d3": "~3.4.10",
+      "topojson": "~1.6.14",
+      "d3-plugins": "*",
+      "foundation": "zurb/bower-foundation",
+      "jquery-ui": "~1.9.2"
+    }
+  }

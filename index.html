@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/css/normalize.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/css/foundation.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/style.css">
+
+<script src="/files/theme/BarGraph/bower_components/d3/d3.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/topojson/topojson.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/modernizr/modernizr.js"></script>
+
+</head>
+
+<body>
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Foodstuffs, 1640&ndash;1688</h2>
+    <p>Click on small charts to enlarge and interact.</p>
+    <a href="http://konigsbergfood.weebly.com"><button>Click to Return</button></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="fruits_pieces.html"><h5>Fruits by Stück</h5>
+    <img src="/files/theme/BarGraph/img/fruits_pieces.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fruits_pounds.html"><h5>Fruits by Pfund</h5>
+    <img src="/files/theme/BarGraph/img/fruits_pounds.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fruits_stof.html"><h5>Fruits by Stof</h5>
+    <img src="/files/theme/BarGraph/img/fruits_stof.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="meats_stof.html"><h5>Meats by Stof</h5>
+    <img src="/files/theme/BarGraph/img/meats_stof.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="meats_stuck.html"><h5>Meats by Stück</h5>
+    <img src="/files/theme/BarGraph/img/meats_stuck.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="meats_thonne.html"><h5>Meats by Thonne</h5>
+    <img src="/files/theme/BarGraph/img/meats_thonne.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="fish_stof.html"><h5>Fish by Stof</h5>
+    <img src="/files/theme/BarGraph/img/fish_stof.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fish_stuck.html"><h5>Fish by Stück</h5>
+    <img src="/files/theme/BarGraph/img/fish_stuck.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fish_pfund.html"><h5>Fish by Pfund</h5>
+    <img src="/files/theme/BarGraph/img/fish_pfund.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="birds.html"><h5>Birds</h5>
+    <img src="/files/theme/BarGraph/img/birds.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="grains.html"><h5>Grains</h5>
+    <img src="/files/theme/BarGraph/img/grains.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="spices_sugar.html"><h5>Spices and Sugar</h5>
+    <img src="/files/theme/BarGraph/img/spices_sugar.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="nuts_seeds.html"><h5>Nuts and Seeds</h5>
+    <img src="/files/theme/BarGraph/img/nuts_seeds.png"/></a>
+  </div>
+  <div class="small-4 columns"></div>
+  <div class="small-4 columns"></div>
+
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row" id="notes">
+  <div class="small-12 columns">
+    <p>Molly Taylor-Poleskey &middot; <a href="http://jasonheppler.org">Jason Heppler</a> &middot;
+    <a href="http://cesta.stanford.edu">Center for Spatial and Textual Analysis</a>, Stanford University.</p>
+  </div>
+</div>
+
+<div style='display:none'>{title}</div>
+<div style='display:none'>{menu}</div>
+<div style='display:none'>{content}</div>
+<div style='padding: 20px; width:100%; text-align:center;'>{footer}</div>
+</body>
+</html>

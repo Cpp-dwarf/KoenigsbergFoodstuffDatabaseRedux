@@ -1,0 +1,160 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.column-width-fix {
+  width: 90%;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.chart {
+  float: left;
+  display: block;
+}
+
+/*.legend {
+  overflow: auto;
+  height: 200px;
+  width: 50px;
+}
+
+.legend line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+}*/
+
+text {
+  font: 10px sans-serif;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.loading-text{
+  font-size: 28px;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+rect.active {
+  fill: red;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 185px;
+  padding: 10px;
+  font-size: 10px;
+  font-family: sans-serif;
+  background: #fff;
+  pointer-events: none;
+  display: block;
+  border-color: #a6a6a6;
+  border-width: 1px;
+  border-style: solid;
+  opacity: 0.8;
+}
+
+.tooltip h5 {
+  font-size: 14px;
+  margin: 0 0 7px 0;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+
+.null-data {
+  fill: #333;
+  opacity: 0.2;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.scroll {
+    overflow: auto;
+  }
+
+table {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr td {
+  font-size: 12px;
+}
+
+td {
+  text-align: right;
+  padding: 2px 0!important;
+}
+
+tr {
+  margin: 0;
+  background-color: white;
+}
+
+#legend {
+  text-align: left;
+  overflow-y: auto;
+  /*width: 90%*/
+  /*margin: 0 auto;*/
+}
+.legend-row {
+  cursor: pointer;
+  float: left;      /* remove if returning to bar chart */
+  padding: 4px;     /* remove if returning to bar chart */
+  font-size: 10px;
+}
+.color-bar {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 1px 4px 1px 0px;
+}
+.color-box {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 4px 4px 4px 16px;
+  padding: 4px;
+}
+
+
+#grayBar{
+	padding-top:15px;
+	text-align:center;
+	  font-size: 10px;
+  font-family: sans-serif;
+}
+

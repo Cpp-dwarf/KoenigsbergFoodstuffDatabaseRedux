@@ -1,0 +1,447 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+body {
+  font-family: Oxygen, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4em;
+  background: #f7f7f7;
+  color: #404040;
+  width:100%;
+}
+body {
+  padding-top: 50px;
+  height:2fr;
+}
+a {
+  text-decoration: none;
+}
+#wrap {
+  padding: 0 3.5%;
+}
+svg {
+  font-family: Oxygen, Helvetica, sans-serif;
+}
+#chart canvas, #chart svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#chart {
+  position: relative;
+  padding-top:50px;
+}
+#footnote {
+  font-size: 0.85em;
+}
+.brush rect.extent {
+  fill: rgba(100,100,100,0.15);
+  stroke: #fff;
+}
+.brush:hover rect.extent {
+  stroke: #222;
+  stroke-dasharray: 5,5;
+}
+.brush rect.extent:hover {
+  stroke-dasharray: none;
+}
+.resize rect {
+  fill: none;
+}
+rect.background {
+  fill: transparent;
+}
+rect.background:hover {
+  fill: rgba(120,120,120,0.2);
+}
+.resize rect {
+  fill: rgba(0,0,0,0.1);
+}
+rect.extent {
+  fill: rgba(255,255,255,0.25);
+  stroke: rgba(0,0,0,0.6);
+}
+/*.background {
+  fill: none;
+}*/
+.axis line, .axis path {
+  fill: none;
+  stroke: #777;
+  stroke-width: 1;
+}
+.axis .tick {
+  width: 200px;
+}
+.axis text {
+  fill: #111;
+  text-anchor: right;
+  font-size: 11px;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+.axis text.label {
+  font-size: 12px;
+  padding-bottom: 24px;
+}
+/*.quarter, .third, .half {
+  float: left;
+}
+.quarter {
+  width: 23%;
+  margin: 0 1%;
+}
+.third {
+  width: 31.3%;
+  margin: 0 1%;
+}
+.half {
+  width: 48%;
+  margin: 0 1%;
+}*/
+h3 {
+  margin: 12px 0 9px;
+}
+h3 small {
+  color: #888;
+  font-weight: normal;
+}
+p {
+  margin: 0.6em 0;
+}
+small {
+  line-height: 1.2em;
+}
+button[disabled=disabled] {
+  display: none;
+}
+button[disabled=disabled] {
+  color: #555 !important;
+  opacity: 0.4;
+}
+.settings button[disabled=disabled] {
+  display: none;
+}
+button#keep-data,
+button#exclude-data {
+  font-weight:bold
+}
+button#keep-data:hover {
+  color: #080;
+}
+button#exclude-data:hover {
+  color: #900;
+}
+#food-list {
+  width: 100%;
+  /*height: 460px;*/
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: nowrap;
+}
+#food-list div {
+  float: left;
+  padding: 5px;
+}
+#legend {
+  text-align: left;
+  overflow-y: auto;
+}
+.legend-row {
+  cursor: pointer;
+  float: left;      /* remove if returning to bar chart */
+  padding: 4px;     /* remove if returning to bar chart */
+}
+.legend-row:hover {
+  font-weight: bold;
+  line-height: 1.3em;
+}
+.sublegend-row {
+  /*cursor: pointer;*/
+  float: left;      /* remove if returning to bar chart */
+  padding: 4px;     /* remove if returning to bar chart */
+}
+.sublegend-row:hover {
+  /*font-weight: bold;*/
+  /*line-height: 1.3em;*/
+}
+.subcategory-row {
+  cursor: pointer;
+  float: left;      /* remove if returning to bar chart */
+  padding: 4px;     /* remove if returning to bar chart */
+}
+.off {
+  color: #999;
+}
+.color-block, .color-bar {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 1px 4px 1px 0px;
+}
+.color-box {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 4px 4px 4px 16px;
+  padding: 4px;
+}
+#rendered-bar,
+#selected-bar {
+  width:0%;
+  font-weight: bold;
+}
+#rendered-bar {
+  background: #888;
+  border-right: 1px solid #666;
+}
+#selected-bar {
+  background: rgba(160,160,160,0.5);
+  border-right: 1px solid #999;
+}
+.fillbar {
+  height: 12px;
+  line-height: 12px;
+  border:1px solid rgba(120,120,120,0.5);
+  width: 120px;
+  display: inline-block;
+}
+.little-box {
+  width: 268px;
+  float: left;
+}
+#header {
+  border-bottom: 1px solid rgba(100,100,100,0.35);
+  background: #333;
+  color: #e2e2e2;
+  padding: 6px 24px 4px;
+  line-height: 24px;
+}
+#header h1 {
+  display: inline-block;
+  margin: 0px 14px 0 0;
+}
+#header button {
+  vertical-align: top;
+}
+.authors {
+  float: right;
+  height: 24px;
+  line-height: 24px;
+  color: #ccc;
+  margin-top: 15px;
+}
+.authors ul {
+  list-style: none;
+  margin: 10;
+  padding: 10;
+}
+.authors ul li {
+  display: inline;
+}
+.authors ul li:not(:first-child):before {
+  color: #fff;
+  content: " · ";
+  padding: 0 4px;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5b5b5;
+  border-radius: 12px;
+}
+
+/*
+table, th, td {
+  border-style:solid;
+  border-right: thin double black;
+  border-bottom: thin single black;
+  border-left: none;
+  border-top: none;
+}
+*/
+
+#foods_table {
+  table-layout: fixed;
+  width: 100%;
+  height: 47vh;
+  overflow: scroll;
+}
+
+table {
+  background: white;
+  margin-bottom: 1.25rem;
+  border: solid 1px #dddddd;
+  table-layout: auto; 
+}
+  
+  table caption {
+    background: transparent;
+    color: #222222;
+    font-size: 1rem;
+    font-weight: bold; }
+  table thead {
+    background: whitesmoke;
+	}
+    table thead tr th{
+      padding-top: 0.5rem;
+	  padding-right: 1.25rem ;
+	  padding-left: .50rem;
+	  padding-bottom:0.625rem;
+      font-size: 0.975rem;
+      font-weight: bold;
+      color: #222222; 
+	  z-index:0;}
+    table thead tr td {
+      padding: 0.5rem .75rem 0.625rem;
+      font-size: 0.975rem;
+      font-weight: bold;
+      color: #222222; }
+  table tfoot {
+    background: whitesmoke; }
+    table tfoot tr th,
+    table tfoot tr td {
+      padding: 0.5rem 0.625rem 0.625rem;
+      font-size: 0.875rem;
+      font-weight: bold;
+      color: #222222; }
+  table tr th,
+  table tr td {
+    padding: 0.5625rem 0.625rem;
+    font-size: 0.975rem;
+    color: #222222;
+    text-align: left; }
+  table tr.even, table tr.alt, table tr:nth-of-type(even) {
+    background: #f9f9f9; }
+  table thead tr th,
+  table tfoot tr th,
+  table tfoot tr td,
+  table tbody tr th,
+  table tbody tr td,
+  table tr td {
+    display: table-cell;
+    line-height: 1.125rem; }
+
+table tr:hover {
+    /*border: 1px solid #333;*/
+    background: #f2f2f2;
+}
+td:second-child {
+    width: 250px;
+}
+
+td[colspan] {
+    width: auto;
+}
+
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: whitesmoke;
+}
+
+#search {
+  float: right;
+  margin-top: 10px;
+}
+
+/* Footer filter */
+#accordion {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	z-index:1;
+}
+
+.panel-default > .panel-heading{
+    background: #fff;
+}
+
+.panel-heading {
+    padding: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.panel-group .panel {
+    border-radius: 0;
+}
+
+.panel-group {
+  margin-bottom: 0;
+}
+
+.panel-title a {
+    color: #333;
+    text-align: left;
+    width: 100%;
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    outline: none;
+}
+
+.panel-title a:hover, .panel-title a:focus, .panel-title a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 62.5rem;
+}
+
+.background path {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.foreground path {
+  fill: none;
+  stroke-opacity: .5;
+  stroke-width: 1.7;
+}
+
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

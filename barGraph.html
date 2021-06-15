@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/css/normalize.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/foundation/modified/foundation.css">
+<link rel="stylesheet" href="/files/theme/BarGraph/bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css">
+<link href="/files/theme/altParallel/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link type="text/css" href="/files/theme/BarGraph/parallel.css" rel="stylesheet" />
+
+<script src="/files/theme/BarGraph/bower_components/d3/d3.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/topojson/topojson.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="/files/theme/BarGraph/bower_components/modernizr/modernizr.js"></script>
+
+
+  <style>
+  svg {
+  font: 10px sans-serif;
+}
+
+.background path {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.foreground path {
+  fill: none;
+  /*stroke: steelblue;*/
+  stroke-width: 1.8px;
+  stroke-opacity: 0.5;
+}
+
+.brush .extent {
+  fill-opacity: .3;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+</style>
+
+
+</head>
+
+
+<body>
+ <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <b><a class="navbar-brand" style="cursor:default; color:whitesmoke;">Königsberg Foodstuffs Database</a></b>
+		<a class="navbar-text " style="cursor:default;">|</a>
+		<a class="navbar-brand" href="http://koenigsbergfood.weebly.com"> Parallel Coordinates Chart</a>
+		<a class="navbar-text" style="cursor:default;">|</a>
+		<a class="navbar-brand" style="color:whitesmoke;" href="http://koenigsbergfood.weebly.com/bargraph"> Bar Graph</a>
+		<a class="navbar-text" style="cursor:default;">|</a>
+		<a class="navbar-brand" href="http://koenigsbergfood.weebly.com/files.html"> Files</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+	  
+	  <!--<a  href="http://koenigsbergfood.weebly.com/bargraph.html"><button id="navButton">Go To Bar Graph Representation</button></a> -->
+        <div class="authors">
+          
+            <a href="https://www.taylor-poleskey.net/">Molly Taylor-Poleskey </a>
+			<p style="display:inline">|</p>
+            <a href="https://jasonheppler.org/">Jason A. Heppler</a>
+
+          
+        </div>
+        <!-- <select name="field-selector" id="field-selector"></select> -->
+        <!--<input type="text" id="search" placeholder="Search food items..."></input>-->
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+
+
+
+<div class="row">
+  <div class="small-12 columns">
+    <h2 style="padding-bottom:15px;">Bar Graph Index</h2>
+      <button type="button" class="collapsible" style="max-height:35px; padding:10px; ">Click me for Details</button>
+<div class="content">
+  <p>The Bar Graph Index presents an overview of consumption from 1640-1688 grouped by “category.” Category is determined both by a food type determined by Dr. Taylor-Poleskey (fish, meat, birds, etc.) based on how the court clerks grouped the foods in the annual account books and by the type of measurement. This overcame the problem of comparing apples to applesauce, or as in this case, absolute numbers of fish to vats of pickled fish (Stof or Pfund). <a href="https://docs.google.com/spreadsheets/d/1laD4OZdeafJidokLSSSc8q2XOYpHEJL6_LvFw_66ECM/edit#gid=0">Click here for charts of modern measurement equivalents of the original German terms.</a>  </p>
+ 
+<p>Click on the small charts to enlarge and interact.</p> 
+ 
+</div>
+  </div>
+</div>
+
+
+
+<div class="row" style="padding-top:55px;">
+  <div class="small-4 columns">
+    <a href="fruits_pieces.html"><h5>Fruits by Stück</h5>
+    <img src="/files/theme/BarGraph/img/fruits_pieces.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fruits_pounds.html"><h5>Fruits by Pfund</h5>
+    <img src="/files/theme/BarGraph/img/fruits_pounds.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fruits_stof.html"><h5>Fruits by Stof</h5>
+    <img src="/files/theme/BarGraph/img/fruits_stof.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="meats_stof.html"><h5>Meats by Stof</h5>
+    <img src="/files/theme/BarGraph/img/meats_stof.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="meats_stuck.html"><h5>Meats by Stück</h5>
+    <img src="/files/theme/BarGraph/img/meats_stuck.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="meats_thonne.html"><h5>Meats by Thonne</h5>
+    <img src="/files/theme/BarGraph/img/meats_thonne.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="fish_stof.html"><h5>Fish by Stof</h5>
+    <img src="/files/theme/BarGraph/img/fish_stof.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fish_stuck.html"><h5>Fish by Stück</h5>
+    <img src="/files/theme/BarGraph/img/fish_stuck.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="fish_pfund.html"><h5>Fish by Pfund</h5>
+    <img src="/files/theme/BarGraph/img/fish_pfund.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="birds.html"><h5>Birds</h5>
+    <img src="/files/theme/BarGraph/img/birds.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="grains.html"><h5>Grains</h5>
+    <img src="/files/theme/BarGraph/img/grains.png"/></a>
+  </div>
+  <div class="small-4 columns">
+    <a href="spices_sugar.html"><h5>Spices and Sugar</h5>
+    <img src="/files/theme/BarGraph/img/spices_sugar.png"/></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <a href="nuts_seeds.html"><h5>Nuts and Seeds</h5>
+    <img src="/files/theme/BarGraph/img/nuts_seeds.png"/></a>
+  </div>
+  <div class="small-4 columns"></div>
+  <div class="small-4 columns"></div>
+
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+  <hr/>
+  </div>
+</div>
+
+<script src="/files/theme/altParallel/parallel.js"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}</script>
+
+
+<div style='display:none'>{title}</div>
+<div style='display:none'>{menu}</div>
+<div style='display:none'>{content}</div>
+<div style='padding: 20px; width:100%; text-align:center;'>{footer}</div>
+</body>
+</html>
